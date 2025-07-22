@@ -1,25 +1,71 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import { ExpenseList } from "./component/ExpenseList";
+import { AddExpense } from "./component/AddExpense";
+import { BudgetSummary } from "./component/BudgetSummary";
+import { SetBudget } from "./component/SetBudget";
+import { Logo } from "./component/Logo";
 
-function App() {
+export function Button({ children, onClick }) {
+  return <button onClick={onClick}>{children}</button>;
+}
+
+export default function App() {
+  const [budget, setBudget] = useState("");
+  const [budgetFor, setBudgetFor] = useState("");
+  const [isBudgetset, setIsBudgetSet] = useState(false);
+  const [expenses, setExpenses] = useState([]);
+
+  function handleAddBudget(e) {
+    e.preventDefault();
+    if (budgetFor && budget) {
+      setIsBudgetSet(true);
+    }
+  }
+
+  function handleAddExpense(expense) {
+    setExpenses((expenses) => [...expenses, expense]);
+  }
+
+  function handleDeleteItem(id) {
+    setExpenses((expense) => expense.filter((expense) => expense.id !== id));
+  }
+
+  function setNewBudget() {
+    const confirm = window.confirm("Want to set a new budget?");
+    if (confirm) {
+      setBudget("");
+      setBudgetFor("");
+      setIsBudgetSet(false);
+      setExpenses([]);
+    }
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app-container">
+      <Logo />
+      {!isBudgetset && (
+        <SetBudget
+          budgetFor={budgetFor}
+          budget={budget}
+          setBudget={setBudget}
+          setBudgetFor={setBudgetFor}
+          onSubmit={handleAddBudget}
+        />
+      )}
+      {isBudgetset && (
+        <div>
+          <BudgetSummary
+            budget={budget}
+            budgetFor={budgetFor}
+            expense={expenses}
+          />
+          <AddExpense onAddExpenses={handleAddExpense} />
+          {expenses.length > 0 && (
+            <ExpenseList expenses={expenses} onDeleteItem={handleDeleteItem} />
+          )}
+          <Button onClick={setNewBudget}>Set New Budget</Button>
+        </div>
+      )}
     </div>
   );
 }
-
-export default App;
