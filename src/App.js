@@ -17,6 +17,10 @@ export default function App() {
 
   function handleAddBudget(e) {
     e.preventDefault();
+    if (!budgetFor || !budget) {
+      window.confirm("Add a budget");
+      return;
+    }
     if (budgetFor && budget) {
       setIsBudgetSet(true);
     }

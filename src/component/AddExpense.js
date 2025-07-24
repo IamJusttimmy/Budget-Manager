@@ -8,7 +8,8 @@ export function AddExpense({ onAddExpenses }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    if (!description || !amount) return;
+    if (!description || !amount)
+      return window.confirm("Please fill in all fields");
 
     const expenseCategory = category ? category : "other";
     const newExpenses = {
@@ -33,6 +34,7 @@ export function AddExpense({ onAddExpenses }) {
           type="text"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
+          maxLength={30}
         />
 
         <label>Amount(₦):</label>
