@@ -1,70 +1,66 @@
-# Getting Started with Create React App
+# 🎉 Event Budget Manager
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple React app that helps users manage their event budgets — perfect for weddings, birthdays, parties, or any occasion. Set a total budget, categorize and track expenses, and get alerts when spending goes over budget.
 
-## Available Scripts
+## 🚀 Features
 
-In the project directory, you can run:
+- ✅ Set a total event budget
+- ➕ Add expenses with category labels (e.g., food, venue, decor)
+- 📊 See real-time summary of:
+  - Total budget
+  - Total spent
+  - Remaining balance
+- ⚠️ Get a warning if you're over budget
+- 🗑️ delete expenses
+- 🔍 Filter expenses by category (optional)
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🧠 What I Learnt
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+This project is a great way to practice React fundamentals:
 
-### `npm test`
+- State management with `useState`
+- Controlled forms and input handling
+- List rendering with `.map()`
+- Conditional rendering
+- Updating and filtering arrays in state
+- Basic component structuring
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 🧩 Component Structure
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+App
+├── SetBudgetForm
+├── BudgetSummary
+├── AddExpenseForm
+├── ExpenseList
+│ └── ExpenseItem
+└── CategoryFilter (optional)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🛠️ Tech Stack
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- React (Vite or Create React App)
+- CSS or TailwindCSS (your choice)
+- Optional: localStorage for data persistence
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+💡 Future Improvements
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Export budget report to PDF
+Add date to expenses
+Support multiple events
+Dark mode toggle
+Save data in localStorage
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+📸 Preview
+<img width="1920" height="1008" alt="React App - Google Chrome 7_22_2025 1_32_52 AM" src="https://github.com/user-attachments/assets/73f379e7-1ea6-4971-bee3-f823fc5328e2" />
+<img width="1920" height="1008" alt="React App - Google Chrome 7_22_2025 1_32_21 AM" src="https://github.com/user-attachments/assets/62f93de7-8ad7-4016-aa96-4e9cbc11ee3b" />
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+🧑‍💻 Author
+Timilehin Amolegbe
+twitter: https://x.com/iamjusttimmy_/status/1947461581849129233
